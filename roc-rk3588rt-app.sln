@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35707.178 d17.12
+VisualStudioVersion = 17.12.35707.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Элементы решения", "Элементы решения", "{5694AA84-9222-4A16-857A-F9356B88DF04}"
 	ProjectSection(SolutionItems) = preProject
@@ -15,6 +15,10 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentation", "{8EFF1A6A-9C1E-491A-AB38-8211FC930CC7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HikRobot", "HikRobot", "{A509E2DE-C349-4D2E-82C8-1CF5C6DD9599}"
+	ProjectSection(SolutionItems) = preProject
+		Documentation\HikRobot\SDK_Samples.zip = Documentation\HikRobot\SDK_Samples.zip
+		Documentation\HikRobot\Параметры SDK.xlsx = Documentation\HikRobot\Параметры SDK.xlsx
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Rockchip", "Rockchip", "{CFDCDB18-0CE5-4951-A622-52A39C454EF0}"
 EndProject
