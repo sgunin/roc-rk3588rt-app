@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Documentation", "Documentat
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "HikRobot", "HikRobot", "{A509E2DE-C349-4D2E-82C8-1CF5C6DD9599}"
 	ProjectSection(SolutionItems) = preProject
+		Documentation\HikRobot\SDK_Docs\Machine Vision Camera SDK Developer Guide Linux (C) V4.5.0.html = Documentation\HikRobot\SDK_Docs\Machine Vision Camera SDK Developer Guide Linux (C) V4.5.0.html
 		Documentation\HikRobot\SDK_Samples.zip = Documentation\HikRobot\SDK_Samples.zip
 		Documentation\HikRobot\Параметры SDK.xlsx = Documentation\HikRobot\Параметры SDK.xlsx
 	EndProjectSection
