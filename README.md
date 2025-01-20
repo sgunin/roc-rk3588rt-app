@@ -1,1 +1,1 @@
-# roc-rk3588rt-app
+# Application for Rokchip roc-rk3588rt board
