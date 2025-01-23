@@ -76,12 +76,12 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <IncludePath>/opt/mvs/include;/usr/include/X11</IncludePath>
-    <LibraryPath>/opt/mvs/lib/aarch64;/usr/lib</LibraryPath>
+    <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
+    <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <IncludePath>/opt/mvs/lib/aarch64</IncludePath>
-    <LibraryPath>/opt/mvs/include</LibraryPath>
+    <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
+    <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <IncludePath>/opt/mvs/include</IncludePath>
@@ -95,7 +95,7 @@
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <LibraryDependencies>X11;MvCameraControl</LibraryDependencies>
+      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
@@ -103,7 +103,7 @@
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <LibraryDependencies>MvCameraControl;pthread</LibraryDependencies>
+      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
