@@ -3,7 +3,6 @@
 
 #include "X11/Xlib.h"
 
-
 int main()
 {
     // Инициализируем XOpenDisplay
@@ -17,14 +16,16 @@ int main()
     // Получение номера экрана по умолчанию
     int screen = DefaultScreen(display);
 
+    // Создаем Graphics context
     GC gc = DefaultGC(display, screen);
 
+    // Получаем ссылку на родительское окно
     Window parent_window = DefaultRootWindow(display);
 
     unsigned int border_color = BlackPixel(display, screen);
     unsigned int background_color = WhitePixel(display, screen);
 
-    // Create window
+    // Создаем окно
     Window window = XCreateSimpleWindow(display, parent_window, 0, 0, 640, 480, 1, border_color, background_color);
     if (!window) {
         printf("Ошибка при выполнении XCreateSimpleWindow\n");
