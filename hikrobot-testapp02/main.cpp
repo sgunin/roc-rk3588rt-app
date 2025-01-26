@@ -37,8 +37,7 @@ static void* WorkThread(void* pUser) {
 	MV_FRAME_OUT stImageInfo = { 0 };
 	MV_DISPLAY_FRAME_INFO stDisplayInfo = { 0 };
 	int i = 0;
-
-	while (stopProcess) {
+	while (!stopProcess) {
 		// Получаем буффер изображения
 		nRet = MV_CC_GetImageBuffer(pUser, &stImageInfo, 1000);
 		if (MV_OK == nRet) {
@@ -199,8 +198,6 @@ int main()
 		return -1;
 	}
 
-	stopProcess = true;
-
 	// Event loop
 	for (;;)
 	{
@@ -211,7 +208,7 @@ int main()
 		// Close button
 		if (event.type == ClientMessage) {
 			if (event.xclient.data.l[0] == wm_delete) {
-				stopProcess = false;
+				stopProcess = true;
 				break;
 			}
 		}

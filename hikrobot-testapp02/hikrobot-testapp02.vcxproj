@@ -78,6 +78,10 @@
     <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
     <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
+    <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
+  </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
@@ -88,7 +92,15 @@
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <LibraryDependencies>MvCameraControl;X11;pthread</LibraryDependencies>
+      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
