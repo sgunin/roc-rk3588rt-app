@@ -75,19 +75,59 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <LibraryPath>/usr/lib/</LibraryPath>
+    <LibraryPath>/usr/lib</LibraryPath>
+    <IncludePath>/usr/include;/usr/include/rockchip</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <IncludePath>/usr/include;/usr/include/rockchip</IncludePath>
+    <LibraryPath>/usr/lib</LibraryPath>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="cat_224x224.jpg" />
-    <Image Include="dog_224x224.jpg" />
+    <None Include="cat_224x224.jpg">
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyFile>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyFile>
+    </None>
+    <None Include="dog_224x224.jpg">
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyFile>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyFile>
+    </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="mobilenet_v1.rknn" />
+    <None Include="mobilenet_v1.rknn">
+      <FileType>Document</FileType>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+      </DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+      </DeploymentContent>
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyToOutputDir>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyFile>
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">true</RemoteCopyFile>
+    </None>
   </ItemGroup>
-  <ItemDefinitionGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>rknnrt</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
+    <ClCompile>
+      <CppLanguageStandard>c++17</CppLanguageStandard>
+    </ClCompile>
+    <Link>
+      <LibraryDependencies>rknnrt</LibraryDependencies>
+    </Link>
+  </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets" />
 </Project>
