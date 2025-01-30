@@ -72,9 +72,11 @@ int main()
 	// Инициализируем XOpenDisplay
 	display = XOpenDisplay(0);
 	if (display == NULL) {
-		printf("Ошибка при выполнении XOpenDisplay, инициализация SDK вернет предупреждение\n");
+		printf("Ошибка при обращении к XOpenDisplay, инициализация SDK вернет предупреждение\n");
 	}
-	printf("XOpenDisplay инициализирована успешно\n");
+	else {
+		printf("XOpenDisplay инициализирован успешно\n");
+	}
 
 	// Инициализируем HikRobot SDK
 	nRet = MV_CC_Initialize();

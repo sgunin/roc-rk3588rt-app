@@ -77,7 +77,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
-    <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
+    <LibraryPath>/usr/lib;/opt/mvs/lib</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
     <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>

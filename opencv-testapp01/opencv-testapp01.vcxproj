@@ -35,9 +35,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{a2a2827d-46f5-4dca-9169-116dd5d392a0}</ProjectGuid>
+    <ProjectGuid>{2cbd892f-a7db-48b4-9a42-3d473b5b0ede}</ProjectGuid>
     <Keyword>Linux</Keyword>
-    <RootNamespace>hikrobot_testapp02</RootNamespace>
+    <RootNamespace>opencv_testapp01</RootNamespace>
     <MinimumVisualStudioVersion>15.0</MinimumVisualStudioVersion>
     <ApplicationType>Linux</ApplicationType>
     <ApplicationTypeRevision>1.0</ApplicationTypeRevision>
@@ -75,32 +75,24 @@
   <ImportGroup Label="PropertySheets" />
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
-    <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
-    <LibraryPath>/usr/lib;/opt/mvs/lib</LibraryPath>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <IncludePath>/usr/include/X11;/opt/mvs/include</IncludePath>
-    <LibraryPath>/usr/lib;/opt/mvs/lib/aarch64</LibraryPath>
+    <IncludePath>/usr/include</IncludePath>
+    <LibraryPath>/usr/lib</LibraryPath>
   </PropertyGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="cat_224x224.jpg">
+      <RemoteCopyFile Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyFile>
+      <RemoteCopyToOutputDir Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">true</RemoteCopyToOutputDir>
+    </None>
   </ItemGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|ARM64'">
     <ClCompile>
       <CppLanguageStandard>c++17</CppLanguageStandard>
     </ClCompile>
     <Link>
-      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
-    </Link>
-  </ItemDefinitionGroup>
-  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|ARM64'">
-    <ClCompile>
-      <CppLanguageStandard>c++17</CppLanguageStandard>
-    </ClCompile>
-    <Link>
-      <LibraryDependencies>MvCameraControl;X11</LibraryDependencies>
+      <LibraryDependencies>opencv_core;opencv_imgcodecs;opencv_highgui</LibraryDependencies>
     </Link>
   </ItemDefinitionGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
